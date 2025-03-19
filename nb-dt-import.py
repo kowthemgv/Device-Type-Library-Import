@@ -16,7 +16,7 @@ def main():
 
     netbox = NetBox(settings)
     files, vendors = settings.dtl_repo.get_devices(
-        f'{settings.dtl_repo.repo_path}/device-types/', args.vendors)
+        f'{settings.dtl_repo.repo_path}', args.vendors)
 
     settings.handle.log(f'{len(vendors)} Vendors Found')
     device_types = settings.dtl_repo.parse_files(files, slugs=args.slugs)
