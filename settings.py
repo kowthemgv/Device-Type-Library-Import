@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 REPO_URL = os.getenv("REPO_URL",
-                     default="https://github.com/netbox-community/devicetype-library.git")
-REPO_BRANCH = os.getenv("REPO_BRANCH", default="master")
+                     default="https://gitlab.com/team1180107/test.git")
+REPO_BRANCH = os.getenv("REPO_BRANCH", default="main")
 NETBOX_URL = os.getenv("NETBOX_URL")
 NETBOX_TOKEN = os.getenv("NETBOX_TOKEN")
 IGNORE_SSL_ERRORS = (os.getenv("IGNORE_SSL_ERRORS", default="False") == "True")
