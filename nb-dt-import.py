@@ -16,7 +16,7 @@ def main():
 
     netbox = NetBox(settings)
     files, vendors = settings.dtl_repo.get_devices(
-        f'{settings.dtl_repo.repo_path}', args.vendors)
+        f'{settings.dtl_repo.repo_path}/device-types/', args.vendors)
 
     settings.handle.log(f'{len(vendors)} Vendors Found')
     device_types = settings.dtl_repo.parse_files(files, slugs=args.slugs)
@@ -27,7 +27,7 @@ def main():
     if netbox.modules:
         settings.handle.log("Modules Enabled. Creating Modules...")
         files, vendors = settings.dtl_repo.get_devices(
-            f'{settings.dtl_repo.repo_path}', args.vendors)
+            f'{settings.dtl_repo.repo_path}/module-types/', args.vendors)
         settings.handle.log(f'{len(vendors)} Module Vendors Found')
         module_types = settings.dtl_repo.parse_files(files, slugs=args.slugs)
         settings.handle.log(f'{len(module_types)} Module-Types Found')
